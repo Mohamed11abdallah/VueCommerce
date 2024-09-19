@@ -52,7 +52,6 @@
     </table>
 
     <Modal :visible="modalVisible" @close="closeModal">
-      <!-- Templates des modals pour ajouter, éditer et afficher un produit -->
       <template v-if="modalType === 'create'">
         <h3>Create New Product</h3>
         <form @submit.prevent="createProduct" class="modal-form">
@@ -134,7 +133,6 @@
 </template>
 
 <script>
-// Import Vue, Reactive, and other modules like Modal
 import { ref, reactive } from "vue";
 import Modal from "../components/Modal.vue";
 
@@ -142,7 +140,6 @@ export default {
   components: { Modal },
   setup() {
     const products = ref([
-      // Example products data
       {
         id: 1,
         name: "Produit A",
@@ -253,3 +250,121 @@ export default {
   },
 };
 </script>
+<style scoped>
+.products-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: #333;
+  text-align: center;
+}
+
+.add-button {
+  display: block;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  color: white;
+  background-color: #28a745;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  transition: background-color 0.3s ease;
+  margin-left: auto;
+}
+
+.add-button:hover {
+  background-color: #218838;
+}
+
+.products-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.products-table th,
+.products-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.action-button {
+  padding: 0.5rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 8px;
+}
+
+.action-button.view {
+  background-color: #007bff;
+  color: white;
+}
+
+.action-button.edit {
+  background-color: #ffc107;
+  color: white;
+}
+
+.action-button.delete {
+  background-color: #dc3545;
+  color: white;
+}
+
+.action-button:hover {
+  opacity: 0.9;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+input,
+select {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.submit-button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  color: white;
+  background-color: #007bff;
+  border-radius: 4px;
+}
+.close-button {
+  padding: 0.75rem;
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+</style>

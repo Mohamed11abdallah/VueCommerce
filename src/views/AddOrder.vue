@@ -65,10 +65,9 @@ export default {
   },
   methods: {
     createOrder() {
-      // Logique pour créer une commande
       console.log("Commande créée", this.form);
-      // Redirection ou autre action après la création
-      this.$router.push("/orders"); // Par exemple, retourner à la liste des commandes
+
+      this.$router.push("/orders");
     },
     addDetail() {
       this.form.details.push({ product: "", quantity: 0, price: 0 });
@@ -80,7 +79,6 @@ export default {
 };
 </script>
 <style scoped>
-/* Style pour la page AddOrder */
 div {
   padding: 2rem;
   background-color: #f9f9f9;
@@ -98,7 +96,7 @@ h2 {
   display: flex;
   justify-content: flex-end;
   gap: 1rem;
-  margin-bottom: 1rem; /* Espace entre les boutons et le formulaire */
+  margin-bottom: 1rem;
   margin-right: 35px;
 }
 
@@ -182,7 +180,6 @@ select {
   background-color: #f9f9f9;
 }
 
-/* Style pour les liens */
 .back-button {
   display: inline-block;
   padding: 0.75rem 1.25rem;
@@ -190,7 +187,7 @@ select {
   border: none;
   border-radius: 5px;
   color: white;
-  background-color: #2196f3; /* Couleur bleue */
+  background-color: #2196f3;
   text-decoration: none;
   text-align: center;
   cursor: pointer;
@@ -198,6 +195,6 @@ select {
 }
 
 .back-button:hover {
-  background-color: #1976d2; /* Couleur bleue plus foncée */
+  background-color: #1976d2;
 }
 </style>

@@ -47,7 +47,6 @@
     </table>
 
     <Modal :visible="modalVisible" @close="closeModal">
-      <!-- Template pour ajouter et éditer une commande -->
       <template v-if="modalType === 'create' || modalType === 'edit'">
         <h3>{{ modalType === "create" ? "Add" : "Edit" }} Order</h3>
         <form
@@ -106,7 +105,6 @@
         </form>
       </template>
 
-      <!-- Template pour afficher les détails de la commande -->
       <template v-else-if="modalType === 'view'">
         <h3>Order Details</h3>
         <p><strong>Date:</strong> {{ form.date }}</p>
@@ -139,7 +137,6 @@ export default {
   components: { Modal },
   setup() {
     const orders = ref([
-      // Exemple de données
       {
         id: 1,
         date: "2024-09-15",
@@ -246,3 +243,159 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.orders-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: #333;
+  text-align: center;
+}
+
+.add-button {
+  display: block;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  color: white;
+  background-color: #28a745;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  transition: background-color 0.3s ease;
+  margin-left: auto;
+}
+
+.add-button:hover {
+  background-color: #218838;
+}
+
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.orders-table th,
+.orders-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.action-button {
+  padding: 0.5rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.action-button.view {
+  background-color: #007bff;
+  color: white;
+}
+
+.action-button.edit {
+  background-color: #ffc107;
+  color: white;
+}
+
+.action-button.delete {
+  background-color: #dc3545;
+  color: white;
+}
+
+.modal-form {
+  display: grid;
+  gap: 1rem;
+  max-width: 600px;
+  margin: auto;
+}
+
+.modal-form label {
+  font-weight: bold;
+}
+
+.modal-form input,
+.modal-form select {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.modal-form .order-detail {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.add-detail-button,
+.remove-detail-button,
+.submit-button,
+.close-button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-detail-button {
+  background-color: #007bff;
+  color: white;
+}
+
+.add-detail-button:hover {
+  background-color: #0056b3;
+}
+
+.remove-detail-button {
+  background-color: #dc3545;
+  color: white;
+}
+
+.remove-detail-button:hover {
+  background-color: #c82333;
+}
+
+.submit-button {
+  background-color: #28a745;
+  color: white;
+}
+
+.submit-button:hover {
+  background-color: #218838;
+}
+
+.close-button {
+  background-color: #6c757d;
+  color: white;
+}
+
+.close-button:hover {
+  background-color: #5a6268;
+}
+
+.no-underline {
+  text-decoration: none;
+  display: inline;
+}
+</style>
