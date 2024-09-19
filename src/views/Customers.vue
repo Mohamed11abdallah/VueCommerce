@@ -53,7 +53,7 @@
           <input type="text" v-model="form.name" required />
 
           <label for="address">Adress:</label>
-          <input type="text" v-model="form.address" required />
+          <textarea v-model="form.address" required></textarea>
 
           <label for="email">Email:</label>
           <input type="email" v-model="form.email" required />
@@ -73,7 +73,7 @@
           <input type="text" v-model="form.name" required />
 
           <label for="address">Adress:</label>
-          <input type="text" v-model="form.address" required />
+          <textarea v-model="form.address" required></textarea>
 
           <label for="email">Email:</label>
           <input type="email" v-model="form.email" required />

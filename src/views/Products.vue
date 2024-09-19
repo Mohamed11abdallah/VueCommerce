@@ -59,7 +59,7 @@
           <input type="text" v-model="form.name" required />
 
           <label for="description">Description:</label>
-          <input type="text" v-model="form.description" required />
+          <textarea v-model="form.description"></textarea>
 
           <label for="price">Price:</label>
           <input type="number" v-model="form.price" required />
@@ -92,7 +92,7 @@
           <input type="text" v-model="form.name" required />
 
           <label for="description">Description:</label>
-          <input type="text" v-model="form.description" required />
+          <textarea v-model="form.description"></textarea>
 
           <label for="price">Price:</label>
           <input type="number" v-model="form.price" required />

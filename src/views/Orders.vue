@@ -106,7 +106,7 @@
       </template>
 
       <template v-else-if="modalType === 'view'">
-        <h3>Order Details</h3>
+        <h3>Order</h3>
         <p><strong>Date:</strong> {{ form.date }}</p>
         <p><strong>Customer:</strong> {{ form.client }}</p>
         <p><strong>Delivery Address:</strong> {{ form.deliveryAddress }}</p>
