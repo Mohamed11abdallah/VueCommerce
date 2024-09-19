@@ -100,7 +100,7 @@
             Add New Detail
           </button>
           <button type="submit" class="submit-button">
-            {{ modalType === "create" ? "Submit" : "Mettre à jour" }}
+            {{ modalType === "create" ? "Submit" : "Confirm" }}
           </button>
         </form>
       </template>
