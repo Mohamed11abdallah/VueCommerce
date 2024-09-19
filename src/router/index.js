@@ -1,10 +1,15 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "../views/Home.vue";
-import ProductList from "../views/ProductList.vue";
+import Customers from "../views/Customers.vue";
+import Products from "../views/Products.vue";
+import Orders from "../views/Orders.vue";
+import AddOrder from "../views/AddOrder.vue";
 
 const routes = [
-  { path: "/", component: Home },
-  { path: "/products", component: ProductList },
+  { path: "/customers", component: Customers },
+  { path: "/products", component: Products },
+  { path: "/orders", component: Orders },
+  { path: "/add-order", component: AddOrder },
+  { path: "/", redirect: "/customers" },
 ];
 
 const router = createRouter({

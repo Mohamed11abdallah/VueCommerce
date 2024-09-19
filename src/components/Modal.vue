@@ -1,17 +1,5 @@
-<script setup>
-import { ref } from 'vue'
+<template></template>
 
-defineProps({
-  msg: String,
-})
+<script></script>
 
-const count = ref(0)
-</script>
-
-<template>
-
-</template>
-
-<style scoped>
-
-</style>
+<style></style>
