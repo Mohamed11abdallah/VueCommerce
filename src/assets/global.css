@@ -1,4 +1,3 @@
-
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -12,7 +11,7 @@ body {
 }
 
 header {
-  background-color: #4CAF50;
+  background-color: #17202a; 
   color: white;
   padding: 1rem 0;
   margin-bottom: 1rem;
@@ -31,10 +30,11 @@ nav a {
   padding: 0.5rem;
   border-radius: 5px;
   transition: background-color 0.3s;
+  
 }
 
 nav a:hover {
-  background-color: #3e8e41;
+  background-color: #5d6d7e; /* Couleur hover pour les liens */
 }
 
 main {
@@ -47,7 +47,7 @@ h1, h2 {
 
 h2 {
   font-size: 1.75rem;
-  color: #333;
+  color: #FFFFFF;
 }
 
 table {
@@ -64,7 +64,7 @@ table th, table td {
 }
 
 table th {
-  background-color: #4CAF50;
+  background-color: #17202a; /* Couleur des en-têtes de table */
   color: white;
 }
 
@@ -75,7 +75,6 @@ table td {
 table tr:hover {
   background-color: #f2f2f2;
 }
-
 
 button {
   padding: 0.5rem 1rem;
@@ -106,7 +105,6 @@ button:hover {
   opacity: 0.8;
 }
 
-
 form {
   background-color: white;
   padding: 2rem;
@@ -133,14 +131,13 @@ form textarea {
 }
 
 form button {
-  background-color: #4CAF50;
+  background-color: #17202a; /* Couleur du bouton de formulaire */
   color: white;
 }
 
 form button:hover {
-  background-color: #45a049;
+  background-color: #5d6d7e; /* Couleur hover du bouton de formulaire */
 }
-
 
 .modal {
   position: fixed;

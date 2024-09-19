@@ -110,12 +110,12 @@ button {
 }
 
 button.create-button {
-  background-color: #4caf50;
+  background-color: #007bff;
   color: white;
 }
 
 button.create-button:hover {
-  background-color: #45a049;
+  background-color: #335e8d;
 }
 
 button.add-detail {
@@ -128,12 +128,12 @@ button.add-detail:hover {
 }
 
 button.remove-detail {
-  background-color: #ff9800;
+  background-color: #ff0000;
   color: white;
 }
 
 button.remove-detail:hover {
-  background-color: #f57c00;
+  background-color: #b84343;
 }
 
 form {
@@ -187,7 +187,7 @@ select {
   border: none;
   border-radius: 5px;
   color: white;
-  background-color: #2196f3;
+  background-color: #6c757d;
   text-decoration: none;
   text-align: center;
   cursor: pointer;
@@ -195,6 +195,6 @@ select {
 }
 
 .back-button:hover {
-  background-color: #1976d2;
+  background-color: #363e44;
 }
 </style>

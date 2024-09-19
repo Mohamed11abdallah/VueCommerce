@@ -25,41 +25,4 @@ export default {
 };
 </script>
 
-<style>
-#app {
-  font-family: Arial, sans-serif;
-  text-align: center;
-}
-
-header {
-  background-color: #f4f4f4;
-  padding: 1rem;
-}
-
-nav {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 1rem;
-}
-
-nav a {
-  text-decoration: none;
-  color: #333;
-}
-
-nav h2 {
-  display: flex;
-  align-items: center;
-  margin: 0;
-  font-size: 1.25rem;
-}
-
-nav i {
-  margin-right: 0.5rem;
-}
-
-main {
-  padding: 2rem;
-}
-</style>
+<style></style>

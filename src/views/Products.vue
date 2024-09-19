@@ -272,7 +272,7 @@ h2 {
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   color: white;
-  background-color: #28a745;
+  background-color: #007bff;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -282,7 +282,7 @@ h2 {
 }
 
 .add-button:hover {
-  background-color: #218838;
+  background-color: #335e8d;
 }
 
 .products-table {
