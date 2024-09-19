@@ -17,32 +17,34 @@ Avant de pouvoir utiliser cette application, assurez-vous d'avoir les éléments
 Suivez ces étapes pour installer et lancer l'application localement :
 
 1. **Cloner le dépôt** :
-    ```bash
+```bash
     git clone https://github.com/Mohamed11abdallah/abc-corporation-app.git
-    ```
-
+```
 2. **Naviguer dans le dossier du projet** :
-    ```bash
+```bash
     cd abc-corporation-app
-    ```
-
+```
 3. **Installer les dépendances** :
-    ```bash
+```bash
     npm install
-    ```
-3. **Installer les dépendances** :
-    ```bash
+```
+4. **Installer les dépendances** :
+```bash
     npm bootstrap 
-    ```
-3. **Installer les dépendances** :
-    ```bash
+```
+5. **Installer les dépendances** :
+```bash
+    npm vue router 
+```
+6. **Installer les dépendances** :
+```bash
     npm install @fortawesome/fontawesome-free
-    ```
-
-4. **Lancer l'application** :
-    ```bash
+```
+7. **Lancer l'application** :
+```bash
     npm run dev
-    ```
+```
+
 
 ## Fonctionnalités
 
