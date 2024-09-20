@@ -9,7 +9,7 @@ const routes = [
   { path: "/products", component: Products },
   { path: "/orders", component: Orders },
   { path: "/add-order", component: AddOrder },
-  { path: "/", redirect: "/customers" },
+  { path: "/", redirect: "/orders" },
 ];
 
 const router = createRouter({

@@ -1,16 +1,19 @@
-# abc-corporation-app
+# Gestion de commande Vuejs
 
 ## Description
 
-L'application **abc-corporation-app** est une application simple et efficace pour Abc Corporation permettant de gérer les commandes, les clients, les produits et les livraisons. Elle permet d'ajouter, modifier, supprimer et consulter des commandes. Cette application est conçue avec Vue.js pour une interface utilisateur réactive et fluide, adaptée à tout type de commerce.
+L'application **gestion_commande_frontend** est une application simple permettant de gérer les commandes, les clients, les produits et les livraisons. Elle permet d'ajouter, modifier, supprimer et consulter des commandes. Cette application est conçue avec Vue.js pour une interface utilisateur réactive et fluide.
 
 ## Prérequis
 
 Avant de pouvoir utiliser cette application, assurez-vous d'avoir les éléments suivants installés sur votre machine :
 
 - **Node.js** (version 12.x ou plus)
-- **npm** ou **yarn** (pour gérer les dépendances)
-- Un navigateur moderne
+  - [Télécharger Node.js](https://nodejs.org/)
+- **Vue.js**
+  - [Vue.js Documentation](https://vuejs.org/)
+- **Vue Router**
+  - [Vue Router Documentation](https://router.vuejs.org/)
 
 ## Installation
 
@@ -18,45 +21,18 @@ Suivez ces étapes pour installer et lancer l'application localement :
 
 1. **Cloner le dépôt** :
 ```bash
-    git clone https://github.com/Mohamed11abdallah/abc-corporation-app.git
+    git clone https://github.com/Mohamed11abdallah/gestion_commande_frontend.git
 ```
 2. **Naviguer dans le dossier du projet** :
 ```bash
-    cd abc-corporation-app
+    cd gestion_commande_frontend
 ```
 3. **Installer les dépendances** :
 ```bash
     npm install
 ```
-4. **Installer les dépendances** :
-```bash
-    npm bootstrap 
-```
-5. **Installer les dépendances** :
-```bash
-    npm vue router 
-```
-6. **Installer les dépendances** :
-```bash
-    npm install @fortawesome/fontawesome-free
-```
-7. **Lancer l'application** :
-```bash
-    npm run dev
-```
-
 
 ## Fonctionnalités
-
-- **Gestion des Clients** : Ajout, visualisation, modification et suppression de clients.
-- **Gestion des Produits** : Ajout, modification, et suppression de produits avec des détails comme le nom, le prix, et la catégorie.
-- **Gestion des Commandes** : Suivi des commandes avec des informations sur le client, l'adresse de livraison, le statut et les détails des produits commandés.
-- **Modale Dynamique** : Utilisation d'un composant modale pour les actions de création, modification, et visualisation.
-- **Icônes d'action** : Utilisation d'icônes (vue, édition, suppression) pour une interface plus intuitive.
-
-## Utilisation
-
-Une fois l'application lancée, vous pouvez naviguer entre les différentes sections (Customers, Products, Orders) via le menu de navigation. Chaque section propose des actions spécifiques :
 
 1. **Customers** : 
     - Voir la liste des clients, ajouter un nouveau client, modifier ou supprimer un client existant.
@@ -66,6 +42,10 @@ Une fois l'application lancée, vous pouvez naviguer entre les différentes sect
 
 3. **Orders** : 
     - Gérer les commandes en ajoutant, éditant, supprimant ou visualisant les détails de chaque commande. 
+
+
+## Déploiement sur Vercel
+https://abc-corporation-app.vercel.app/
 
 
 ## Auteur

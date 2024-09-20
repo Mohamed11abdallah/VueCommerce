@@ -1,10 +1,11 @@
 <template>
   <div class="orders-container">
     <h2>List of Orders</h2>
-    <router-link to="/add-order" class="no-underline">
-      <button class="add-button">Add New Order</button>
+    <router-link to="/add-order" class="btn btn-primary mb-2 float-end">
+      Add New Order
     </router-link>
-    <table class="orders-table">
+
+    <table class="table table-striped">
       <thead>
         <tr>
           <th>Date</th>
@@ -22,21 +23,21 @@
           <td>{{ order.deliveryAddress }}</td>
           <td>{{ order.trackNumber }}</td>
           <td>{{ order.status }}</td>
-          <td class="actions">
+          <td>
             <button
-              class="action-button view"
+              class="btn btn-info btn-sm me-2"
               @click="showModal('view', order)"
             >
               <i class="fas fa-eye"></i>
             </button>
             <button
-              class="action-button edit"
+              class="btn btn-warning btn-sm me-2"
               @click="showModal('edit', order)"
             >
               <i class="fas fa-edit"></i>
             </button>
             <button
-              class="action-button delete"
+              class="btn btn-danger btn-sm"
               @click="confirmDelete(order.id)"
             >
               <i class="fas fa-trash"></i>
@@ -49,59 +50,123 @@
     <Modal :visible="modalVisible" @close="closeModal">
       <template v-if="modalType === 'create' || modalType === 'edit'">
         <h3>{{ modalType === "create" ? "Add" : "Edit" }} Order</h3>
+
         <form
           @submit.prevent="
             modalType === 'create' ? createOrder() : updateOrder()
           "
-          class="modal-form"
+          class="modal-form row g-3"
         >
-          <label for="date">Date:</label>
-          <input type="date" v-model="form.date" required />
+          <div class="col-md-6">
+            <label for="date" class="form-label">Date:</label>
+            <input
+              type="date"
+              v-model="form.date"
+              required
+              class="form-control"
+            />
+          </div>
 
-          <label for="client">Customer Name:</label>
-          <input type="text" v-model="form.client" required />
+          <div class="col-md-6">
+            <label for="client" class="form-label">Customer Name:</label>
+            <input
+              type="text"
+              v-model="form.client"
+              required
+              class="form-control"
+            />
+          </div>
 
-          <label for="deliveryAddress">Delivery Address:</label>
-          <input type="text" v-model="form.deliveryAddress" required />
-
-          <label for="trackNumber">Track Number:</label>
-          <input type="text" v-model="form.trackNumber" required />
-
-          <label for="status">Order Status:</label>
-          <select v-model="form.status">
-            <option value="Processing">Processing</option>
-            <option value="Shipped">Shipped</option>
-            <option value="Delivered">Delivered</option>
-          </select>
-
-          <h4>Order Details</h4>
-          <div
-            v-for="(detail, index) in form.details"
-            :key="index"
-            class="order-detail"
-          >
-            <label for="product">Product:</label>
-            <input type="text" v-model="detail.product" required />
-
-            <label for="quantity">Quantity:</label>
-            <input type="number" v-model="detail.quantity" required />
-
-            <label for="price">Price:</label>
-            <input type="number" v-model="detail.price" required />
-
-            <button
-              @click.prevent="removeDetail(index)"
-              class="remove-detail-button"
+          <div class="col-md-6">
+            <label for="deliveryAddress" class="form-label"
+              >Delivery Address:</label
             >
-              Remove
+            <input
+              type="text"
+              v-model="form.deliveryAddress"
+              required
+              class="form-control"
+            />
+          </div>
+
+          <div class="col-md-6">
+            <label for="trackNumber" class="form-label">Track Number:</label>
+            <input
+              type="text"
+              v-model="form.trackNumber"
+              required
+              class="form-control"
+            />
+          </div>
+
+          <div class="col-md-12">
+            <label for="status" class="form-label">Order Status:</label>
+            <select v-model="form.status" class="form-select">
+              <option value="Processing">Processing</option>
+              <option value="Shipped">Shipped</option>
+              <option value="Delivered">Delivered</option>
+            </select>
+          </div>
+
+          <div class="col-md-12">
+            <h4>Order Details</h4>
+            <div
+              v-for="(detail, index) in form.details"
+              :key="index"
+              class="order-detail mb-3 p-3 border rounded"
+            >
+              <div class="row g-3">
+                <div class="col-md-4">
+                  <label for="product" class="form-label">Product:</label>
+                  <input
+                    type="text"
+                    v-model="detail.product"
+                    required
+                    class="form-control"
+                  />
+                </div>
+
+                <div class="col-md-4">
+                  <label for="quantity" class="form-label">Quantity:</label>
+                  <input
+                    type="number"
+                    v-model="detail.quantity"
+                    required
+                    class="form-control"
+                  />
+                </div>
+
+                <div class="col-md-4">
+                  <label for="price" class="form-label">Price:</label>
+                  <input
+                    type="number"
+                    v-model="detail.price"
+                    required
+                    class="form-control"
+                  />
+                </div>
+              </div>
+
+              <div class="text-end mt-2">
+                <button
+                  @click.prevent="removeDetail(index)"
+                  class="btn btn-danger btn-btn-sm-2"
+                >
+                  Remove
+                </button>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-btn-sm-2 mt-3">
+              Confirm
+            </button>
+            <button
+              @click="closeModal"
+              class="btn btn-secondary btn-sm-2 ms-2 mt-3"
+            >
+              Close
             </button>
           </div>
-          <button @click.prevent="addDetail" class="add-detail-button">
-            Add New Detail
-          </button>
-          <button type="submit" class="submit-button">
-            {{ modalType === "create" ? "Submit" : "Confirm" }}
-          </button>
         </form>
       </template>
 
@@ -117,13 +182,17 @@
         <div
           v-for="(detail, index) in form.details"
           :key="index"
-          class="order-detail"
+          class="order-detail mb-3 p-3 border rounded"
         >
           <p><strong>Product:</strong> {{ detail.product }}</p>
           <p><strong>Quantity:</strong> {{ detail.quantity }}</p>
           <p><strong>Price:</strong> {{ detail.price }}</p>
         </div>
-        <button @click="closeModal" class="close-button">Close</button>
+        <div class="mt-3 d-flex justify-content-start">
+          <button @click="closeModal" class="btn btn-secondary btn-sm-2">
+            Close
+          </button>
+        </div>
       </template>
     </Modal>
   </div>
@@ -230,13 +299,11 @@ export default {
       modalVisible,
       modalType,
       form,
-      currentOrderId,
       showModal,
       closeModal,
       createOrder,
       updateOrder,
       confirmDelete,
-      deleteOrder,
       addDetail,
       removeDetail,
     };
@@ -246,156 +313,13 @@ export default {
 
 <style scoped>
 .orders-container {
-  padding: 2rem;
-  max-width: 1200px;
+  width: 80%;
   margin: auto;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
-h2 {
-  margin-bottom: 1.5rem;
-  font-size: 2rem;
-  color: #333;
-  text-align: center;
-}
-
-.add-button {
-  display: block;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  color: white;
-  background-color: #007bff;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-bottom: 1.5rem;
-  transition: background-color 0.3s ease;
-  margin-left: auto;
-}
-
-.add-button:hover {
-  background-color: #335e8d;
-}
-
-.orders-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.orders-table th,
-.orders-table td {
-  padding: 1rem;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-}
-
-.actions {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.action-button {
-  padding: 0.5rem;
-  border: none;
-  cursor: pointer;
-  border-radius: 4px;
-  font-size: 1rem;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.action-button.view {
-  background-color: #007bff;
-  color: white;
-}
-
-.action-button.edit {
-  background-color: #ffc107;
-  color: white;
-}
-
-.action-button.delete {
-  background-color: #dc3545;
-  color: white;
-}
-
 .modal-form {
-  display: grid;
-  gap: 1rem;
-  max-width: 600px;
-  margin: auto;
+  padding: 20px;
 }
-
-.modal-form label {
-  font-weight: bold;
-}
-
-.modal-form input,
-.modal-form select {
-  width: 100%;
-  padding: 0.5rem;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-}
-
-.modal-form .order-detail {
-  padding: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  background-color: #fff;
-}
-
-.add-detail-button,
-.remove-detail-button,
-.submit-button,
-.close-button {
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.add-detail-button {
-  background-color: #007bff;
-  color: white;
-}
-
-.add-detail-button:hover {
-  background-color: #0056b3;
-}
-
-.remove-detail-button {
-  background-color: #dc3545;
-  color: white;
-}
-
-.remove-detail-button:hover {
-  background-color: #c82333;
-}
-
-.submit-button {
-  background-color: #28a745;
-  color: white;
-}
-
-.submit-button:hover {
-  background-color: #218838;
-}
-
-.close-button {
-  background-color: #6c757d;
-  color: white;
-}
-
-.close-button:hover {
-  background-color: #5a6268;
-}
-
-.no-underline {
-  text-decoration: none;
-  display: inline;
+.order-detail {
+  background-color: #f8f9fa;
 }
 </style>
