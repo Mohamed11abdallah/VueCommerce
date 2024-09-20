@@ -1,7 +1,7 @@
 <template>
   <div class="container mt-4">
     <div class="mb-3 align-right">
-      <router-link to="/" class="btn btn-secondary mb-3 mt-3 me-2"
+      <router-link to="/orders" class="btn btn-secondary mb-3 mt-3 me-2"
         >Return to List of Orders</router-link
       >
       <button

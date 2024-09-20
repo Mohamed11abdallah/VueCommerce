@@ -35,7 +35,7 @@
               <i class="fas fa-edit"></i>
             </button>
             <button
-              class="btn btn-danger btn-sm"
+              class="btn btn-danger btn-sm me-2"
               @click="confirmDelete(customer.id)"
             >
               <i class="fas fa-trash"></i>
@@ -49,6 +49,32 @@
       <template v-if="modalType === 'create'">
         <h3>Create new customer</h3>
         <form @submit.prevent="createCustomer" class="modal-form">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="firstName">First name</label>
+                <input
+                  type="text"
+                  v-model="form.firstName"
+                  required
+                  class="form-control form-control-sm-2"
+                  placeholder="Enter first name"
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="lastName">Last name</label>
+                <input
+                  type="text"
+                  v-model="form.lastName"
+                  required
+                  class="form-control form-control-sm-2"
+                  placeholder="Enter last name"
+                />
+              </div>
+            </div>
+          </div>
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
@@ -87,15 +113,17 @@
             ></textarea>
           </div>
 
-          <div class="form-group mt-2">
-            <label for="email">Email</label>
-            <input
-              type="email"
-              v-model="form.email"
-              required
-              class="form-control form-control-sm-2"
-              placeholder="Enter email"
-            />
+          <div class="col-md-6">
+            <div class="form-group mt-2">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                v-model="form.email"
+                required
+                class="form-control form-control-sm-2 email-input"
+                placeholder="Enter email"
+              />
+            </div>
           </div>
 
           <div class="mt-3">
@@ -115,6 +143,32 @@
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
+                <label for="firstName">First name</label>
+                <input
+                  type="text"
+                  v-model="form.firstName"
+                  required
+                  class="form-control form-control-sm-2"
+                  placeholder="Enter first name"
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="lastName">Last name</label>
+                <input
+                  type="text"
+                  v-model="form.lastName"
+                  required
+                  class="form-control form-control-sm-2"
+                  placeholder="Enter last name"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
                 <label for="name">Customer Name</label>
                 <input
                   type="text"
@@ -150,15 +204,17 @@
             ></textarea>
           </div>
 
-          <div class="form-group mt-2">
-            <label for="email">Email</label>
-            <input
-              type="email"
-              v-model="form.email"
-              required
-              class="form-control form-control-sm-2"
-              placeholder="Enter email"
-            />
+          <div class="col-md-6">
+            <div class="form-group mt-2">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                v-model="form.email"
+                required
+                class="form-control form-control-sm-2"
+                placeholder="Enter email"
+              />
+            </div>
           </div>
 
           <button type="submit" class="btn btn-primary btn-sm-2 mt-3">
@@ -175,15 +231,74 @@
 
       <template v-else-if="modalType === 'view'">
         <h3>Customer Details</h3>
-        <p><strong>Name:</strong> {{ form.name }}</p>
-        <p><strong>Address:</strong> {{ form.address }}</p>
-        <p><strong>Email:</strong> {{ form.email }}</p>
-        <p><strong>Phone:</strong> {{ form.phone }}</p>
-        <div class="mt-3 d-flex justify-content-start">
-          <button @click="closeModal" class="btn btn-secondary btn-sm-2">
-            Close
-          </button>
-        </div>
+        <form class="customer-details-form" @submit.prevent>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <input
+                  type="text"
+                  v-model="form.firstName"
+                  class="form-control form-control-sm-2"
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input
+                  type="text"
+                  v-model="form.lastName"
+                  class="form-control form-control-sm-2"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="name">Customer Name:</label>
+                <input
+                  type="text"
+                  v-model="form.name"
+                  class="form-control form-control-sm-2"
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input
+                  type="text"
+                  v-model="form.phone"
+                  class="form-control form-control-sm-2"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-group mt-2">
+            <label for="address">Address:</label>
+            <textarea
+              v-model="form.address"
+              class="form-control form-control-sm-2"
+            ></textarea>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group mt-2">
+              <label for="email">Email:</label>
+              <input
+                type="email"
+                v-model="form.email"
+                class="form-control form-control-sm-2"
+              />
+            </div>
+          </div>
+
+          <div class="mt-3 d-flex justify-content-start">
+            <button @click="closeModal" class="btn btn-secondary">Close</button>
+          </div>
+        </form>
       </template>
     </Modal>
   </div>
@@ -199,6 +314,8 @@ export default {
     const customers = ref([
       {
         id: 1,
+        firstName: "Alice",
+        lastName: "Dupont",
         name: "Alice Dupont",
         address: "123 Rue Principale",
         email: "alice@example.com",
@@ -206,6 +323,8 @@ export default {
       },
       {
         id: 2,
+        firstName: "Bob",
+        lastName: "Martin",
         name: "Bob Martin",
         address: "456 Avenue des Champs",
         email: "bob@example.com",
@@ -215,7 +334,14 @@ export default {
 
     const modalVisible = ref(false);
     const modalType = ref("create");
-    const form = reactive({ name: "", address: "", email: "", phone: "" });
+    const form = reactive({
+      firstName: "",
+      lastName: "",
+      name: "",
+      address: "",
+      email: "",
+      phone: "",
+    });
     const currentCustomerId = ref(null);
 
     function showModal(type, customer = null) {
@@ -231,12 +357,23 @@ export default {
 
     function closeModal() {
       modalVisible.value = false;
-      Object.assign(form, { name: "", address: "", email: "", phone: "" });
+      Object.assign(form, {
+        firstName: "",
+        lastName: "",
+        name: "",
+        address: "",
+        email: "",
+        phone: "",
+      });
       currentCustomerId.value = null;
     }
 
     function createCustomer() {
-      customers.value.push({ id: customers.value.length + 1, ...form });
+      customers.value.push({
+        id: customers.value.length + 1,
+        ...form,
+        name: `${form.firstName} ${form.lastName}`,
+      });
       closeModal();
     }
 
@@ -245,7 +382,11 @@ export default {
         (c) => c.id === currentCustomerId.value
       );
       if (index !== -1)
-        customers.value[index] = { ...customers.value[index], ...form };
+        customers.value[index] = {
+          ...customers.value[index],
+          ...form,
+          name: `${form.firstName} ${form.lastName}`,
+        };
       closeModal();
     }
 
@@ -270,9 +411,14 @@ export default {
   },
 };
 </script>
+
 <style scoped>
 .customers-container {
   width: 80%;
   margin: auto;
 }
+/* .email-input {
+  width: 50%;
+  max-width: 100%;
+} */
 </style>

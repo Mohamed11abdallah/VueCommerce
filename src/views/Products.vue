@@ -41,7 +41,7 @@
               <i class="fas fa-edit"></i>
             </button>
             <button
-              class="btn btn-danger btn-sm"
+              class="btn btn-danger btn-sm me-2"
               @click="confirmDelete(product.id)"
             >
               <i class="fas fa-trash"></i>
@@ -255,18 +255,95 @@
 
       <template v-else-if="modalType === 'view'">
         <h3>View Product</h3>
-        <p><strong>Product Name:</strong> {{ form.name }}</p>
-        <p><strong>Description:</strong> {{ form.description }}</p>
-        <p><strong>Price:</strong> ${{ form.price.toFixed(2) }}</p>
-        <p><strong>Stock:</strong> {{ form.stock }}</p>
-        <p><strong>Category:</strong> {{ form.category }}</p>
-        <p><strong>Barcode:</strong> {{ form.barcode }}</p>
-        <p><strong>Status:</strong> {{ form.status }}</p>
-        <div class="mt-3 d-flex justify-content-start">
-          <button @click="closeModal" class="btn btn-secondary btn-sm-2">
-            Close
-          </button>
-        </div>
+        <form class="modal-form">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="name">Product Name:</label>
+                <input
+                  type="text"
+                  v-model="form.name"
+                  class="form-control form-control-sm-2"
+                />
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="price">Price:</label>
+                <input
+                  type="number"
+                  v-model="form.price"
+                  class="form-control form-control-sm-2"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="stock">Stock Quantity:</label>
+                <input
+                  type="number"
+                  v-model="form.stock"
+                  class="form-control form-control-sm-2"
+                />
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="category">Category:</label>
+                <input
+                  type="text"
+                  v-model="form.category"
+                  class="form-control form-control-sm-2"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group mt-2">
+            <label for="description">Description:</label>
+            <textarea
+              v-model="form.description"
+              class="form-control form-control-sm-2"
+            ></textarea>
+          </div>
+
+          <div class="row mt-2">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="barcode">Barcode:</label>
+                <input
+                  type="text"
+                  v-model="form.barcode"
+                  class="form-control form-control-sm-2"
+                />
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="status">Status:</label>
+                <select
+                  v-model="form.status"
+                  class="form-control form-control-sm-2"
+                >
+                  <option value="Active">Active</option>
+                  <option value="Inactive">Inactive</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-3 d-flex justify-content-start">
+            <button @click="closeModal" class="btn btn-secondary btn-sm-2">
+              Close
+            </button>
+          </div>
+        </form>
       </template>
     </Modal>
   </div>
