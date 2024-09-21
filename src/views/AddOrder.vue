@@ -117,7 +117,7 @@
       <button
         type="button"
         @click="addDetail"
-        class="btn btn-success mb-3 btn-sm-2"
+        class="btn btn-primary mb-3 btn-sm-2"
       >
         Add New Detail
       </button>

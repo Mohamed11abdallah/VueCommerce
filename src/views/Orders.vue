@@ -157,20 +157,26 @@
               </div>
             </div>
 
-            <button type="submit" class="btn btn-primary btn-btn-sm-2 mt-3">
-              Confirm
-            </button>
-            <button
-              @click="closeModal"
-              class="btn btn-secondary btn-sm-2 ms-2 mt-3"
-            >
-              Close
-            </button>
+            <div class="mt-3 d-flex justify-content-end">
+              <button
+                @click="addDetail"
+                class="btn btn-primary btn-sm-2 mt-3 me-2"
+              >
+                Ajouter un nouveau détail
+              </button>
+              <button type="submit" class="btn btn-primary btn-sm-2 mt-3">
+                Confirm
+              </button>
+
+              <button
+                @click="closeModal"
+                class="btn btn-secondary btn-sm-2 ms-2 mt-3"
+              >
+                Close
+              </button>
+            </div>
           </div>
         </form>
-        <button @click="addDetail" class="btn btn-primary btn-sm-2 mt-3">
-          Ajouter un nouveau détail
-        </button>
       </template>
 
       <template v-else-if="modalType === 'view'">
@@ -276,7 +282,7 @@
               </div>
             </div>
 
-            <div class="mt-3 d-flex justify-content-start">
+            <div class="mt-3 d-flex justify-content-end">
               <button @click="closeModal" class="btn btn-secondary btn-sm-2">
                 Close
               </button>

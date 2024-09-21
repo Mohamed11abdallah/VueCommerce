@@ -241,15 +241,17 @@
             </div>
           </div>
 
-          <button type="submit" class="btn btn-primary btn-sm-2 mt-3">
-            Confirm
-          </button>
-          <button
-            @click="closeModal"
-            class="btn btn-secondary btn-sm-2 ms-2 mt-3"
-          >
-            Close
-          </button>
+          <div class="mt-3 d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary btn-sm-2 mt-3">
+              Confirm
+            </button>
+            <button
+              @click="closeModal"
+              class="btn btn-secondary btn-sm-2 ms-2 mt-3"
+            >
+              Close
+            </button>
+          </div>
         </form>
       </template>
 
@@ -345,7 +347,7 @@
             </div>
           </div>
 
-          <div class="mt-3 d-flex justify-content-start">
+          <div class="mt-3 d-flex justify-content-end">
             <button @click="closeModal" class="btn btn-secondary btn-sm-2">
               Close
             </button>
