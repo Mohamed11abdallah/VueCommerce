@@ -174,16 +174,26 @@
       </template>
 
       <template v-else-if="modalType === 'view'">
-        <h3>Order</h3>
+        <h3>View Order</h3>
         <form class="modal-form row g-3">
           <div class="col-md-6">
             <label for="date" class="form-label">Date:</label>
-            <input type="date" v-model="form.date" class="form-control" />
+            <input
+              type="date"
+              v-model="form.date"
+              class="form-control"
+              disabled
+            />
           </div>
 
           <div class="col-md-6">
             <label for="client" class="form-label">Customer Name:</label>
-            <input type="text" v-model="form.client" class="form-control" />
+            <input
+              type="text"
+              v-model="form.client"
+              class="form-control"
+              disabled
+            />
           </div>
 
           <div class="col-md-6">
@@ -194,6 +204,7 @@
               type="text"
               v-model="form.deliveryAddress"
               class="form-control"
+              disabled
             />
           </div>
 
@@ -203,12 +214,13 @@
               type="text"
               v-model="form.trackNumber"
               class="form-control"
+              disabled
             />
           </div>
 
           <div class="col-md-12">
             <label for="status" class="form-label">Order Status:</label>
-            <select v-model="form.status" class="form-select">
+            <select v-model="form.status" class="form-select" disabled>
               <option value="Processing">Processing</option>
               <option value="Shipped">Shipped</option>
               <option value="Delivered">Delivered</option>
@@ -229,6 +241,7 @@
                     type="text"
                     v-model="detail.product"
                     class="form-control"
+                    disabled
                   />
                 </div>
 
@@ -238,6 +251,7 @@
                     type="number"
                     v-model="detail.quantity"
                     class="form-control"
+                    disabled
                   />
                 </div>
 
@@ -247,6 +261,7 @@
                     type="number"
                     v-model="detail.price"
                     class="form-control"
+                    disabled
                   />
                 </div>
               </div>
@@ -317,6 +332,7 @@ export default {
       status: "Shipped",
       details: [],
     });
+
     const currentOrderId = ref(null);
 
     function showModal(type, order = null) {

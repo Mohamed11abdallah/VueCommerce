@@ -142,7 +142,7 @@
             </div>
           </div>
 
-          <button type="submit" class="btn btn-success btn-sm-2 mt-3 me-2">
+          <button type="submit" class="btn btn-primary btn-sm-2 mt-3 me-2">
             Confirm
           </button>
           <button @click="closeModal" class="btn btn-secondary btn-sm-2 mt-3">
@@ -264,6 +264,7 @@
                   type="text"
                   v-model="form.name"
                   class="form-control form-control-sm-2"
+                  disabled
                 />
               </div>
             </div>
@@ -275,6 +276,7 @@
                   type="number"
                   v-model="form.price"
                   class="form-control form-control-sm-2"
+                  disabled
                 />
               </div>
             </div>
@@ -288,6 +290,7 @@
                   type="number"
                   v-model="form.stock"
                   class="form-control form-control-sm-2"
+                  disabled
                 />
               </div>
             </div>
@@ -299,6 +302,7 @@
                   type="text"
                   v-model="form.category"
                   class="form-control form-control-sm-2"
+                  disabled
                 />
               </div>
             </div>
@@ -309,6 +313,7 @@
             <textarea
               v-model="form.description"
               class="form-control form-control-sm-2"
+              disabled
             ></textarea>
           </div>
 
@@ -320,6 +325,7 @@
                   type="text"
                   v-model="form.barcode"
                   class="form-control form-control-sm-2"
+                  disabled
                 />
               </div>
             </div>
@@ -330,6 +336,7 @@
                 <select
                   v-model="form.status"
                   class="form-control form-control-sm-2"
+                  disabled
                 >
                   <option value="Active">Active</option>
                   <option value="Inactive">Inactive</option>
@@ -355,6 +362,11 @@ import Modal from "../components/Modal.vue";
 
 export default {
   components: { Modal },
+  data() {
+    return {
+      isDisabled: false,
+    };
+  },
   setup() {
     const products = ref([
       {

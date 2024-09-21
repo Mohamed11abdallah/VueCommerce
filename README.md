@@ -1,19 +1,25 @@
-# gestion_commande_frontend
+# Vue Commerce - Application dynamique Vue.js
 
 ## Description
 
-L'application **gestion_commande_frontend** est une application simple permettant de gérer les commandes, les clients, les produits et les livraisons. Elle permet d'ajouter, modifier, supprimer et consulter des commandes. Cette application est conçue avec Vue.js pour une interface utilisateur réactive et fluide.
+Ce dépôt contient une application dynamique Vue.js conçue pour gérer les données commerciales et les relations client pour la Corporation ABC. L'application offre une interface utilisateur conviviale pour effectuer des opérations CRUD (Créer, Lire, Mettre à jour, Supprimer) sur les données client et vente.
+
+## Technologies utilisées
+
+- **Vue.js** pour le framework frontend
+- **HTML5** pour la structure et le contenu du site web
+- **CSS3** pour la mise en page et le design
+- **JavaScript** pour la logique du côté client
+- **npm** pour la gestion des dépendances
+- **Vercel** pour le déploiement
+
 
 ## Prérequis
 
 Avant de pouvoir utiliser cette application, assurez-vous d'avoir les éléments suivants installés sur votre machine :
 
 - **Node.js** (version 12.x ou plus)
-  - [Télécharger Node.js](https://nodejs.org/)
-- **Vue.js**
-  - [Vue.js Documentation](https://vuejs.org/)
-- **Vue Router**
-  - [Vue Router Documentation](https://router.vuejs.org/)
+- **npm** (version 10.8.1)
 
 ## Installation
 
@@ -21,15 +27,19 @@ Suivez ces étapes pour installer et lancer l'application localement :
 
 1. **Cloner le dépôt** :
 ```bash
-    git clone https://github.com/Mohamed11abdallah/gestion_commande_frontend.git
+    git clone https://github.com/Mohamed11abdallah/VueCommerce.git
 ```
 2. **Naviguer dans le dossier du projet** :
 ```bash
-    cd gestion_commande_frontend
+    cd VueCommerce
 ```
 3. **Installer les dépendances** :
 ```bash
     npm install
+```
+. **Lancement du projet en local** :
+```bash
+    npm run dev
 ```
 
 ## Fonctionnalités
@@ -45,7 +55,7 @@ Suivez ces étapes pour installer et lancer l'application localement :
 
 
 ## Déploiement sur Vercel
-https://abc-corporation-app.vercel.app/
+https://vue-commerce-sigma.vercel.app/
 
 
 ## Auteur

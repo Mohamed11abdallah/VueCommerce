@@ -52,32 +52,6 @@
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <label for="firstName">First name</label>
-                <input
-                  type="text"
-                  v-model="form.firstName"
-                  required
-                  class="form-control form-control-sm-2"
-                  placeholder="Enter first name"
-                />
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="lastName">Last name</label>
-                <input
-                  type="text"
-                  v-model="form.lastName"
-                  required
-                  class="form-control form-control-sm-2"
-                  placeholder="Enter last name"
-                />
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
                 <label for="name">Customer Name</label>
                 <input
                   type="text"
@@ -143,32 +117,6 @@
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <label for="firstName">First name</label>
-                <input
-                  type="text"
-                  v-model="form.firstName"
-                  required
-                  class="form-control form-control-sm-2"
-                  placeholder="Enter first name"
-                />
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="lastName">Last name</label>
-                <input
-                  type="text"
-                  v-model="form.lastName"
-                  required
-                  class="form-control form-control-sm-2"
-                  placeholder="Enter last name"
-                />
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
                 <label for="name">Customer Name</label>
                 <input
                   type="text"
@@ -217,15 +165,9 @@
             </div>
           </div>
 
-          <button type="submit" class="btn btn-primary btn-sm-2 mt-3">
-            Confirm
-          </button>
-          <button
-            @click="closeModal"
-            class="btn btn-secondary btn-sm-2 ms-2 mt-3"
-          >
-            Close
-          </button>
+          <div class="mt-3 d-flex justify-content-start">
+            <button @click="closeModal" class="btn btn-secondary">Close</button>
+          </div>
         </form>
       </template>
 
@@ -235,33 +177,12 @@
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <label for="firstName">First Name:</label>
-                <input
-                  type="text"
-                  v-model="form.firstName"
-                  class="form-control form-control-sm-2"
-                />
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="lastName">Last Name:</label>
-                <input
-                  type="text"
-                  v-model="form.lastName"
-                  class="form-control form-control-sm-2"
-                />
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
                 <label for="name">Customer Name:</label>
                 <input
                   type="text"
                   v-model="form.name"
                   class="form-control form-control-sm-2"
+                  disabled
                 />
               </div>
             </div>
@@ -272,6 +193,7 @@
                   type="text"
                   v-model="form.phone"
                   class="form-control form-control-sm-2"
+                  disabled
                 />
               </div>
             </div>
@@ -281,6 +203,7 @@
             <textarea
               v-model="form.address"
               class="form-control form-control-sm-2"
+              disabled
             ></textarea>
           </div>
 
@@ -291,6 +214,7 @@
                 type="email"
                 v-model="form.email"
                 class="form-control form-control-sm-2"
+                disabled
               />
             </div>
           </div>

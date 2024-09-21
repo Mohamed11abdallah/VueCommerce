@@ -2,7 +2,7 @@
   <div class="container mt-4">
     <div class="mb-3 align-right">
       <router-link to="/orders" class="btn btn-secondary mb-3 mt-3 me-2"
-        >Return to List of Orders</router-link
+        >Return to OrderList</router-link
       >
       <button
         type="submit"
@@ -25,7 +25,7 @@
           />
         </div>
         <div class="col-md-6">
-          <label for="client" class="form-label">Customer:</label>
+          <label for="client" class="form-label">Customer Name:</label>
           <input
             type="text"
             v-model="form.client"
@@ -61,7 +61,7 @@
       <div class="row mb-3">
         <div class="col-md-6">
           <label for="status" class="form-label">Order Status:</label>
-          <select v-model="form.status" class="form-select form-select-sm">
+          <select v-model="form.status" class="form-select form-select-sm-2">
             <option value="Processing">Processing</option>
             <option value="Shipped">Shipped</option>
             <option value="Delivered">Delivered</option>
