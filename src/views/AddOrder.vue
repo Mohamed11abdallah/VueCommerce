@@ -1,9 +1,10 @@
 <template>
   <div class="container mt-4">
+    <h3>Add New Order</h3>
     <div class="mb-3 align-right">
-      <router-link to="/orders" class="btn btn-secondary mb-3 mt-3 me-2"
-        >Return to OrderList</router-link
-      >
+      <router-link to="/orders" class="btn btn-secondary mb-3 mt-3 me-2">
+        Return to Order List
+      </router-link>
       <button
         type="submit"
         form="orderForm"
@@ -109,6 +110,7 @@
           type="button"
           @click="removeDetail(index)"
           class="btn btn-danger btn-sm-2"
+          v-if="form.details.length > 1"
         >
           Remove
         </button>
@@ -135,35 +137,39 @@ export default {
         deliveryAddress: "",
         trackNumber: "",
         status: "Processing",
-        details: [],
+        details: [{ product: "", quantity: 1, price: 0 }],
       },
     };
   },
   methods: {
     createOrder() {
       console.log("Commande créée", this.form);
-
       this.$router.push("/orders");
     },
     addDetail() {
-      this.form.details.push({ product: "", quantity: 0, price: 0 });
+      this.form.details.push({ product: "", quantity: 1, price: 0 });
     },
     removeDetail(index) {
-      this.form.details.splice(index, 1);
+      if (this.form.details.length > 1) {
+        this.form.details.splice(index, 1);
+      }
     },
   },
 };
 </script>
 
 <style scoped>
+.router-link-active {
+  color: #007bff;
+  font-weight: bold;
+  border-bottom: 2px solid #007bff;
+}
 .order-detail {
   background-color: #f9f9f9;
 }
-
 .align-right {
   text-align: right;
 }
-
 .button-spacing {
   margin-left: 20px;
 }
