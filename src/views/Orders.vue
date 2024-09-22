@@ -271,15 +271,6 @@
                   />
                 </div>
               </div>
-
-              <div class="text-end mt-2">
-                <button
-                  @click.prevent="removeDetail(index)"
-                  class="btn btn-danger btn-btn-sm-2"
-                >
-                  Remove
-                </button>
-              </div>
             </div>
 
             <div class="mt-3 d-flex justify-content-end">
