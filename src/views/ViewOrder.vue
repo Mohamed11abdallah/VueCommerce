@@ -99,9 +99,8 @@ export default {
     const order = ref({});
 
     onMounted(() => {
-      // Simuler la récupération de la commande par ID
       const orderId = route.params.id;
-      // Remplace ceci par la logique de récupération des données
+
       order.value = {
         date: "2024-09-15",
         client: "Alice Dupont",
@@ -110,13 +109,13 @@ export default {
         status: "Shipped",
         details: [
           { product: "Produit A", quantity: 2, price: 50 },
-          { product: "Produit B", quantity: 1, price: 200 },
+          { product: "Produit B", quantity: 1, price: 300 },
         ],
       };
     });
 
     function goBack() {
-      router.push("/orders"); // Modifier selon ton chemin
+      router.push("/orders");
     }
 
     return { order, goBack };
