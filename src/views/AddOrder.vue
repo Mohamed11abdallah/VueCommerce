@@ -80,12 +80,20 @@
         <div class="row mb-3">
           <div class="col-md-4">
             <label for="product" class="form-label">Product:</label>
-            <input
-              type="text"
+            <!-- Le champ select pour les produits -->
+            <select
               v-model="detail.product"
+              class="form-select form-select-sm-2"
               required
-              class="form-control form-control-sm-2"
-            />
+            >
+              <option
+                v-for="product in products"
+                :key="product"
+                :value="product"
+              >
+                {{ product }}
+              </option>
+            </select>
           </div>
           <div class="col-md-4">
             <label for="quantity" class="form-label">Quantity:</label>
@@ -131,6 +139,8 @@
 export default {
   data() {
     return {
+      // Les options prédéfinies pour les produits
+      products: ["Product A", "Product B", "Product C", "Product D"],
       form: {
         date: "",
         client: "",
@@ -143,7 +153,7 @@ export default {
   },
   methods: {
     createOrder() {
-      console.log("Commande créée", this.form);
+      console.log("Order created", this.form);
       this.$router.push("/orders");
     },
     addDetail() {

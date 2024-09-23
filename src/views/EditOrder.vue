@@ -55,6 +55,7 @@
           <option value="Delivered">Delivered</option>
         </select>
       </div>
+
       <div class="col-md-12">
         <h4>Order Details</h4>
         <div
@@ -65,12 +66,15 @@
           <div class="row g-3">
             <div class="col-md-4">
               <label for="product" class="form-label">Product:</label>
-              <input
-                type="text"
-                v-model="detail.product"
-                class="form-control"
-                required
-              />
+              <select v-model="detail.product" class="form-select" required>
+                <option
+                  v-for="product in products"
+                  :key="product"
+                  :value="product"
+                >
+                  {{ product }}
+                </option>
+              </select>
             </div>
             <div class="col-md-4">
               <label for="quantity" class="form-label">Quantity:</label>
@@ -107,11 +111,15 @@
           <div class="row g-3">
             <div class="col-md-4">
               <label for="defaultProduct" class="form-label">Product:</label>
-              <input
-                type="text"
-                v-model="newDetail.product"
-                class="form-control"
-              />
+              <select v-model="newDetail.product" class="form-select">
+                <option
+                  v-for="product in products"
+                  :key="product"
+                  :value="product"
+                >
+                  {{ product }}
+                </option>
+              </select>
             </div>
             <div class="col-md-4">
               <label for="defaultQuantity" class="form-label">Quantity:</label>
@@ -144,7 +152,6 @@
     </form>
   </div>
 </template>
-
 <script>
 import { ref, onMounted } from "vue";
 import { useRoute, useRouter } from "vue-router";
@@ -153,15 +160,26 @@ export default {
   setup() {
     const route = useRoute();
     const router = useRouter();
+
     const order = ref({
+      date: "",
+      client: "",
+      deliveryAddress: "",
+      trackNumber: "",
+      status: "",
       details: [],
     });
 
     const newDetail = ref({ product: "", quantity: 1, price: 0 });
 
+    // Liste des produits disponibles
+    const products = ref(["Produit A", "Produit B", "Produit C", "Produit D"]);
+
+    // Charger les détails de la commande lors du montage du composant
     onMounted(() => {
       const orderId = route.params.id;
 
+      // Exemple de détails de commande que tu peux remplacer par une API réelle
       order.value = {
         date: "2024-09-15",
         client: "Alice Dupont",
@@ -175,15 +193,18 @@ export default {
       };
     });
 
+    // Fonction de mise à jour de la commande
     function updateOrder() {
       alert("Order updated!");
       goBack();
     }
 
+    // Fonction pour revenir à la liste des commandes
     function goBack() {
       router.push("/orders");
     }
 
+    // Ajouter un nouveau détail à la commande
     function addDetail() {
       if (
         newDetail.value.product &&
@@ -197,13 +218,22 @@ export default {
       }
     }
 
+    // Supprimer un détail de la commande
     function removeDetail(index) {
       if (order.value.details.length > 1) {
         order.value.details.splice(index, 1);
       }
     }
 
-    return { order, updateOrder, goBack, addDetail, removeDetail, newDetail };
+    return {
+      order,
+      updateOrder,
+      goBack,
+      addDetail,
+      removeDetail,
+      newDetail,
+      products,
+    };
   },
 };
 </script>
