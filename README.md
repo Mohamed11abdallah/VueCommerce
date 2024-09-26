@@ -13,7 +13,6 @@ Ce dépôt contient une application dynamique Vue.js conçue pour gérer les don
 - **npm** pour la gestion des dépendances
 - **Vercel** pour le déploiement
 
-
 ## Prérequis
 
 Avant de pouvoir utiliser cette application, assurez-vous d'avoir les éléments suivants installés sur votre machine :
@@ -26,38 +25,45 @@ Avant de pouvoir utiliser cette application, assurez-vous d'avoir les éléments
 Suivez ces étapes pour installer et lancer l'application localement :
 
 1. **Cloner le dépôt** :
+
 ```bash
     git clone https://github.com/Mohamed11abdallah/VueCommerce.git
 ```
+
 2. **Naviguer dans le dossier du projet** :
+
 ```bash
     cd VueCommerce
 ```
+
 3. **Installer les dépendances** :
+
 ```bash
     npm install
 ```
+
 . **Lancement du projet en local** :
+
 ```bash
     npm run dev
 ```
 
 ## Fonctionnalités
 
-1. **Customers** : 
-    - Voir la liste des clients, ajouter un nouveau client, modifier ou supprimer un client existant.
+1. **Customers** :
 
-2. **Products** : 
-    - Gérer la liste des produits, y compris l'ajout de nouveaux produits et la gestion de leur stock.
+   - Voir la liste des clients, ajouter un nouveau client, modifier ou supprimer un client existant.
 
-3. **Orders** : 
-    - Gérer les commandes en ajoutant, éditant, supprimant ou visualisant les détails de chaque commande. 
+2. **Products** :
 
+   - Gérer la liste des produits, y compris l'ajout de nouveaux produits et la gestion de leur stock.
+
+3. **Orders** :
+   - Gérer les commandes en ajoutant, éditant, supprimant ou visualisant les détails de chaque commande.
 
 ## Déploiement sur Vercel
 
 https://vue-commerce-sigma.vercel.app/
-
 
 ## Auteur
 

@@ -2,7 +2,7 @@
   <div class="container mt-4">
     <h3>View Order</h3>
     <router-link to="/orders" class="btn btn-secondary float-end mb-3 mt-3 me-2"
-      >Return to OrderList</router-link
+      >Return to Order List</router-link
     >
     <form class="row g-3 mt-5">
       <div class="col-md-6">
